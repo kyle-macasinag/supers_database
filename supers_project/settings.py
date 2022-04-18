@@ -69,6 +69,10 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': False
+}
+
 WSGI_APPLICATION = 'supers_project.wsgi.application'
 
 
