@@ -28,10 +28,10 @@ def super_detail(request,pk):
         serializer = SupersSerializer(supers)
         return Response(serializer.data)
     elif request.method =="PUT":
-        serializer = SupersSerializer(supers)
+        serializer = SupersSerializer(supers, data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data)
     elif request.method == 'DELETE':
         supers.delete()
-        return Response(satus=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_204_NO_CONTENT)
